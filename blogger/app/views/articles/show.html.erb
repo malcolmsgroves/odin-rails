@@ -2,3 +2,9 @@
 <p><%= @article.body %></p>
 <!-- makes a link to the articles via articles_path -->
 <%= link_to "<< Back to Articles List", articles_path %>
+<br/>
+<!-- targetted via trickle-down -->
+<%= link_to "delete", article_path(@article), method: :delete,
+data: {confirm: "Really delete the article?"} %>
+<br/>
+<%= link_to "edit", edit_article_path(@article) %>

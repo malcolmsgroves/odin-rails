@@ -3,5 +3,10 @@
 # end
 
 Blogger::Application.routes.draw do
+
+  #puts the root at the index
+  root to: 'article#index'
+
+  # should always use routes RESTful convenction
   resources :articles
 end
