@@ -1,0 +1,20 @@
+<h1>All Articles</h1>
+
+<ul id="articles">
+
+  <!-- need @article to be singular
+   this is an embedded ruby html element -->
+  <% @article.each do |article| %>
+    <!-- for every article (@article is an array of articles) -->
+    <li>
+      <!-- <%= this symbol displays the returned ruby
+      value to the DOM -->
+      <%= link_to article.title, article_path(article) %>
+    </li>
+  <% end %>
+</ul>
+
+<!-- link_to is a function that takes the parameter
+new_article_path which is a variable in the rails scope
+that can be found in the routes -->
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
